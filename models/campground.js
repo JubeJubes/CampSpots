@@ -60,5 +60,3 @@ module.exports = mongoose.model('Campground', CampgroundSchema)
 
 
 
-
-//https://res.cloudinary.com/dc2lqicn8/image/upload/w_400/v1645930672/CampSpots/tr5zvvexsz9201ll3u00.jpg

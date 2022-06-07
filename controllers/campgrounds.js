@@ -18,8 +18,8 @@ module.exports.submitNewForm = async (req,res,next)=> {
        query:req.body.ground.location,
        limit:1
        }).send()
-   console.log (geoData.body.features[0].center)
-    res.send(geoData.body.features[0].center)
+   //console.log (geoData.body.features[0].center)
+    //res.send(geoData.body.features[0].center)
 
 
     const grnd = new Campground(req.body.ground)

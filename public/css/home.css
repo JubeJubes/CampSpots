@@ -1,0 +1,44 @@
+
+body {
+    height:100vh;
+    background-image: linear-gradient(0.12turn,rgba(0,0,0,.5),rgba(0,0,0,.05)),
+     url("https://get.pxhere.com/photo/mountainous-landforms-sky-tent-mountain-camping-morning-fell-mountain-range-landscape-summit-sunrise-geological-phenomenon-alps-hill-cloud-recreation-horizon-evening-national-park-rock-1621932.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    text-shadow: 0 0.05rem 0.1rem rgba(0,0,0,.5);
+    box-shadow: inset 0 0 5rem rgba(0,0,0,.5);
+}
+.cover-container {
+    max-width:60vw;
+}
+.nav-link {
+    padding: 2rem 0rem 1rem 0rem;
+    font-weight: 700;
+    color: rgba(0,0,0,0.6);
+    margin-left: 1.5rem;
+    border-bottom: 0.35rem solid transparent;
+    transition: transform .5s;
+}
+.nav-link:hover{
+    border-bottom-color: rgba(202, 103, 2,0.7);
+    transform: translateY(-3px);
+}
+.nav-link.active{
+    border-bottom-color: rgba(202, 103, 2,0.7);
+    transition: transform .4s;
+}
+.logo:hover {
+    color: rgba(238, 160, 81, 0.8);
+    transition: transform .4s;
+}
+
+#homebtn {
+    background-color: rgba(0, 119, 182);
+    transition: transform .1s;
+}
+
+#homebtn:hover {
+    background-color: rgba(0, 119, 182,0.5);
+    transform: translateY(-1px);
+}

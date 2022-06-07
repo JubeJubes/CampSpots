@@ -1,0 +1,60 @@
+<%layout('layouts/boilerplate')%>
+<div class="col-6 offset-3">
+    <div class="mb-3">
+        <form action="/campgrounds/<%=grnd._id%>?_method=PUT" method="POST" novalidate class ="needs-validation" enctype = "multipart/form-data">
+            <div class = "form-floating mb-3">
+                <input type="text" class = "form-control"  id = "title" name = "ground[title]" value = "<%=grnd.title%>" required>
+                <label for="title"  >Title</label>  
+                <div class="valid-feedback">Looks good</div>  
+            </div>
+            <div class = "form-floating mb-3">
+                <input type="text" class = "form-control"  id = "loction" name = "ground[location]" value = "<%=grnd.location%>" required>
+                <label for="location">Location</label>
+                <div class="valid-feedback">Looks good</div>  
+            </div>
+
+            <div class = "form-floating mb-3">
+                <textarea class = "form-control"  id = "description" name = "ground[description]" style="height:8rem;white-space: pre-wrap;" required><%=grnd.description%></textarea>
+                <label for="description">Description</label>    
+                <div class="valid-feedback">Looks good</div>              
+            </div>
+            <div class = "form-floating mb-3">
+                <input type="number" class = "form-control"  id = "price" name = "ground[price]" value = "<%=grnd.price%>" required>
+                <label for="price">Price</label>
+                <div class="valid-feedback">Looks good</div>  
+            </div>
+            <div class = "mb-3">
+              <input type="file" class = "form-control" name="image" id="image" >
+            </div>
+            <div class = "form-check-inline d-flex flex-wrap mb-4 me-0 ">
+                
+                <% grnd.images.forEach(function(img,i){%>
+                <div class = "position-relative">
+                        
+                        <div class="position-absolute top-0 end-0" style="z-index:1000;">
+                            <input type="checkbox" class="btn-check" name="deleteImages[]" id="image-<%=i%>" value=<%=img.filename%> autocomplete="off">
+                            <label class="btn btn-outline-danger mt-2 me-2" for="image-<%=i%>" style="background-color:rgba(255, 255, 255, 0.5)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill align-self-center" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                </svg> 
+                            </label>
+                        </div>
+                        <div style="z-index:-1000;">
+                            <img class = "img-thumbnail" src="<%=img.thumbnail%> " alt="camping picture">
+                        </div>
+                        
+                </div>
+                <%}) %> 
+            </div>
+            <div class = "d-flex">
+                <a class = "btn btn-danger " href="/campgrounds/<%=grnd._id%>">Back to Campground</a>
+                <button class = "btn btn-success ms-auto">Update Campground</button>
+                
+            </div>
+
+
+        </form>
+    </div>
+</div>
+    
+

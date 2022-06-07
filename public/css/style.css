@@ -1,0 +1,17 @@
+
+
+.btn-overwrite-1:hover {
+    background-color: #dae0e9;
+}
+
+#map {
+    width: 100%;
+    height:100%;
+}
+#show-cntr { 
+    position: relative;
+    height:20rem;
+    }
+#index-cntr { 
+    height:30rem;
+    }

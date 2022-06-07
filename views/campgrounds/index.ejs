@@ -1,0 +1,37 @@
+<%layout('layouts/boilerplate')%>
+    <div id="index-cntr">
+        <div id="map"></div>
+    </div>
+    <h1 class = "mt-2 mb-4">All Campgrounds</h1>
+    <div class = "mb-3"><a class = "btn btn-success" href="/campgrounds/new">Add Campground</a></div>
+    
+        <%for (let c of campgrounds) {%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(c.images.length >0){ %> 
+                    <img src="<%=c.images[0].url%>" alt="" class="img-fluid">
+                    <% } %> 
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a class = "btn btn-primary "href="/campgrounds/<%=c._id%>" ><%=c.title%></a></h5>
+                        <p class ="card-text">
+                            <small class=" text-muted"><%=c.location%></small>
+                        </p>
+                        <p class="card-text"><%=c.description%></p>
+                        <p class="card-text"><strong>$ <%=c.price%>.00</strong><small>/day</small></p>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <%}%>
+        
+        <script>
+            const mapToken = '<%-process.env.MAPBOX_TOKEN%>'
+            const campgrounds = {features:<%-JSON.stringify(campgrounds)%>}
+          </script>
+    
+        <script src="/scripts/indexPageMap.js"></script>

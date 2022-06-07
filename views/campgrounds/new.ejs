@@ -1,0 +1,45 @@
+<%layout('layouts/boilerplate')%>
+<h1 class="text-center mt-2 mb-4">New Campground</h1>
+<div class="col-6 offset-3">
+    <div class="mb-3">
+        <form action="/campgrounds" method = "POST" novalidate class ="needs-validation" enctype = "multipart/form-data">
+            
+                <div class = "form-floating mb-3">
+                    <input type="text" class = "form-control"  id = "title" name = "ground[title]" placeholder="Title" required>
+                    <label for="title"  >Title</label>  
+                    <div class="valid-feedback">Looks good</div>  
+                </div>
+                <div class = "form-floating mb-3">
+                    <input type="text" class = "form-control"  id = "loction" name = "ground[location]" placeholder="Location" required>
+                    <label for="location">Location</label>
+                    <div class="valid-feedback">Looks good</div>  
+                </div>
+
+                <div class = "form-floating mb-3">
+                    <textarea class = "form-control"  id = "description" name = "ground[description]" style = "height:8rem" placeholder="Description" required></textarea>
+                    <label for="description">Description</label>    
+                    <div class="valid-feedback">Looks good</div>             
+                </div>
+                <div class = "form-floating mb-3">
+                    <input type="number" class = "form-control"  id = "price" name = "ground[price]" placeholder="0.00" step="0.01"required> 
+                    <label for="price">Price</label>
+                </div>
+                <div class = "  mb-3">
+                    <!-- <label for="image" class = "fs-6"></label>  -->
+                    <input type="file" class = "form-control" name="image" id="formFileMultiple"  >
+                    <!-- <input type="text" class = "form-control"  id = "image" name = "ground[image]" placeholder="Image" required>-->
+                    
+                </div>
+           
+            <button class = "btn btn-success">Add Campground</button>
+            <div class="d-inline float-end "><a class = "btn btn-danger " href="/campgrounds">All Campgrounds</a></div>
+            
+
+        </form>
+       
+    </div>
+
+</div>
+
+
+
